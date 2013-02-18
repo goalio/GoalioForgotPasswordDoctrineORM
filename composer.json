@@ -1,0 +1,29 @@
+{
+    "name": "goalio/goalio-forgotpassword-doctrine-orm",
+    "description": "Doctrine2 ORM storage adapter for GoalioForgotPassword.",
+    "type": "library",
+    "keywords": [
+        "zf2"
+    ],
+    "homepage": "https://github.com/goalio/GoalioForgotPasswordDoctrineORM",
+    "authors": [
+        {
+            "name": "Philipp Dobrigkeit",
+            "email": "p.dobrigkeit@goalio.de",
+            "homepage": "http://www.goalio.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "goalio/goalio-forgotpassword": "0.*",
+        "doctrine/doctrine-orm-module": "0.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "GoalioForgotPasswordDoctrineORM": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
