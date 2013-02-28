@@ -51,7 +51,7 @@ class Password extends GoalioPasswordMapper
 
     public function cleanPriorForgotRequests($userId)
     {
-        $dql = sprintf("DELETE %s u WHERE u.user = %s", $this->options->getPasswordEntityClass(), $userId);
+        $dql = sprintf("DELETE %s u WHERE u.user_id = %s", $this->options->getPasswordEntityClass(), $userId);
         $query = $this->em->createQuery($dql);
         $query->getResult();
     }
