@@ -16,7 +16,7 @@ class Module
         // Add the default entity driver only if specified in configuration
         if ($options->getEnableDefaultEntities()) {
             $chain = $sm->get('doctrine.driver.orm_default');
-            $chain->addDriver(new XmlDriver(__DIR__ . '/config/xml/zfcuserdoctrineorm'), 'ZfcUserDoctrineORM\Entity');
+            $chain->addDriver(new XmlDriver(__DIR__ . '/config/xml/goalioforgotpassworddoctrineorm'), 'GoalioForgotPasswordDoctrineORM\Entity');
         }
     }
 
@@ -44,7 +44,7 @@ class Module
                     return new Options\ModuleOptions(isset($config['goalioforgotpassword']) ? $config['goalioforgotpassword'] : array());
                 },
                 'goalioforgotpassword_password_mapper' => function ($sm) {
-                    return new \GoalioForgotPasswordDoctrineORM\Mapper\User(
+                    return new \GoalioForgotPasswordDoctrineORM\Mapper\Password(
                         $sm->get('goalioforgotpassword_doctrine_em'),
                         $sm->get('goalioforgotpassword_module_options')
                     );

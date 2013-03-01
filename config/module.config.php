@@ -9,7 +9,7 @@ return array(
 
             'orm_default' => array(
                 'drivers' => array(
-                    'GoalioForgotPasswordDoctrineORM\Entity'  => 'goalioforgotpassword_entity'
+                    'GoalioForgotPassword\Entity'  => 'goalioforgotpassword_entity'
                 )
             )
         )
