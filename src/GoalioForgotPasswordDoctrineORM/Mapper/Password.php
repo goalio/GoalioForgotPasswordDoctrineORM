@@ -35,13 +35,13 @@ class Password extends GoalioPasswordMapper
     {
         $er = $this->em->getRepository($this->options->getPasswordEntityClass());
 
-        return $er->findOneBy(array('user' => $userId));
+        return $er->findOneBy(array('user_id' => $userId));
     }
 
     public function findByUserIdRequestKey($userId, $key)
     {
         $er = $this->em->getRepository($this->options->getPasswordEntityClass());
-        return $er->findOneBy(array('user' => $userId, 'requestKey' => $key));
+        return $er->findOneBy(array('user_id' => $userId, 'requestKey' => $key));
     }
 
     public function cleanExpiredForgotRequests($expiryTime=86400)
@@ -51,7 +51,7 @@ class Password extends GoalioPasswordMapper
 
     public function cleanPriorForgotRequests($userId)
     {
-        $dql = sprintf("DELETE %s u WHERE u.user = %s", $this->options->getPasswordEntityClass(), $userId);
+        $dql = sprintf("DELETE %s u WHERE u.user_id = %s", $this->options->getPasswordEntityClass(), $userId);
         $query = $this->em->createQuery($dql);
         $query->getResult();
     }
