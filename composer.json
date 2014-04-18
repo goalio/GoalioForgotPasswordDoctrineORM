@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "goalio/goalio-forgotpassword": "0.*",
+        "goalio/goalio-forgotpassword": "dev-master",
         "doctrine/doctrine-orm-module": "0.*"
     },
     "autoload": {
